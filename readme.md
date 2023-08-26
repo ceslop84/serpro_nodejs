@@ -19,5 +19,6 @@ Demais referências para estudo básico:
 * Conexão a banco de dados e CRUD;
 * Ler e escrever em arquivos;
 * Manipulação de string;
+* Manipulação de datas;
 * Testes unitários (jest);
 * Documentação (docstring);
