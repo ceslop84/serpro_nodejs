@@ -131,6 +131,8 @@ class Pessoa{
         console.log("Esta string tem " + texto.length + " caracteres.");
         console.log("Em caixa baixa: " + texto.toLowerCase());
         console.log("Em caixa ALTA: " + texto.toUpperCase());
+        console.log("Substituindo: " + texto.replaceAll("a", "b"));
+        console.log("Split: " + texto.split(" "));
 
     }
 
@@ -158,6 +160,29 @@ class Pessoa{
 
     funcaoParaSerTestada(valor1, valor2){
         return valor1 + valor2;
+    }
+
+    manipulacaoData(data){
+        const agora = new Date();
+        console.log("Parâmetros de hoje" + " " + agora.getFullYear() + " " + agora.getMonth() + " " + agora.getDate() + " " + agora.getHours() + " " + agora.getMinutes() + " " + agora.getSeconds());
+        let mes = agora.getMonth() + 1
+        console.log("Agora formatado: " + agora.getFullYear() + "-" + mes + "-" + agora.getDate());
+        const daquiUmaSemana = new Date();
+        daquiUmaSemana.setDate(daquiUmaSemana.getDate()+7);
+        mes = daquiUmaSemana.getMonth()+1;
+        console.log("Daqui uma semana: " + daquiUmaSemana.getFullYear() + "-" + mes + "-" + daquiUmaSemana.getDate());
+        const daqui30dias = new Date();
+        daqui30dias.setDate(daqui30dias.getDate()+30);
+        mes = daqui30dias.getMonth()+1;
+        console.log("Daqui 30 dias: " + daqui30dias.getFullYear() + "-" + mes + "-" + daqui30dias.getDate());
+        const fimAno = new Date("12/31/2023");
+        const diasFimAno = Math.round((fimAno.getTime() - agora.getTime())/(1000*24*60*60));
+        console.log("Dias para o fim do ano: " + diasFimAno);
+        let dataListaStr = data.split("/");
+        let dataInformadaStr = dataListaStr[1]+"/"+dataListaStr[0]+"/"+dataListaStr[2];
+        const dataInformada = new Date(dataInformadaStr);
+        mes = dataInformada.getMonth()+1;
+        console.log("Data informada: " + dataInformada.getFullYear() + "-" + mes + "-" + dataInformada.getDate());
     }
 }
 
